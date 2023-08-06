@@ -4,3 +4,14 @@ ja:
       role:
         general: '一般'
         admin: '管理者'
+  activerecord:
+    models:
+    attributes:
+      code:
+        code: 'エラーコード'
+        title: 'タイトル'
+        body: '詳細'
+        occurrence_count: '発生回数'
+  attributes:
+    created_at: '作成日'
+    updated_at: '更新日'

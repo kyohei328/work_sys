@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_11_140107) do
+ActiveRecord::Schema.define(version: 2023_08_04_040253) do
+
+  create_table "codes", force: :cascade do |t|
+    t.integer "code", null: false
+    t.string "title", null: false
+    t.text "body"
+    t.integer "occurrence_count", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"

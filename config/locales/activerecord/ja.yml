@@ -9,8 +9,8 @@ ja:
     attributes:
       code:
         code: 'エラーコード'
-        title: 'タイトル'
-        body: '詳細'
+        title: 'エラー名称'
+        body: '対処内容'
         occurrence_count: '発生回数'
   attributes:
     created_at: '作成日'

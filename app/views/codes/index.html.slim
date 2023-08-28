@@ -1,0 +1,19 @@
+.container.mb-5.pt-2
+  .row
+    .col-md-12
+      table.table.table-striped
+        thead
+          tr
+            th[scope="col"]
+              = Code.human_attribute_name(:code)
+            th[scope="col"]
+              = Code.human_attribute_name(:title)
+            th[scope="col"]
+              = Code.human_attribute_name(:body)
+            th[scope="col"]
+              = Code.human_attribute_name(:occurrence_count)
+            th[scope="col"]
+              = Code.human_attribute_name(:updated_at)
+            th[scope="col"]
+        tbody
+          = render @codes

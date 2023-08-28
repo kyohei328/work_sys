@@ -4,7 +4,7 @@ class CreateCodes < ActiveRecord::Migration[5.2]
       t.integer :code, null:false
       t.string :title, null:false
       t.text :body
-      t.integer :occurrence_count, default: 0
+      t.integer :occurrence_count, default: 1
 
       t.timestamps
     end

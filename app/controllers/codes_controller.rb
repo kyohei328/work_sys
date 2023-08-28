@@ -1,7 +1,7 @@
 class CodesController < ApplicationController
 
     before_action :set_code, only: %i[edit update destroy]
-    before_action :update_occurrence_count, only: %i[update]
+    # before_action :update_occurrence_count, only: %i[update]
 
     def index
         @codes = Code.all.order(code: "desc")
@@ -12,7 +12,7 @@ class CodesController < ApplicationController
     end
 
     def create
-        binding.pry
+        # binding.pry
         @code = Code.new(code_params)
         if @code.save
             redirect_to codes_path, scucess: 'エラー内容を保存しました。'
@@ -22,20 +22,19 @@ class CodesController < ApplicationController
         end
     end
 
-    def show
-        
-    end
+    def show; end
 
     def edit; end
 
     def update
-        unless button_params == '追加'
+        unless button_params == '回数追加'
             if @code.update(code_params)
                 redirect_to codes_path
             else
                 render :edit
             end
         else
+            @code.occurrence_count += 1
             if @code.save
                 redirect_to codes_path
             else
@@ -64,13 +63,12 @@ class CodesController < ApplicationController
         params.require(:commit)
     end
 
-    def update_occurrence_count
-        # params.permit(:occurrence_count)@code
-        # @code.occurrence_count_add
-        if button_params == '追加'
-            occurrence_count = params.require(:occurrence_count).to_i
-            @code.occurrence_count = @code.occurrence_count + occurrence_count
-        end
-    end
+    # def update_occurrence_count
+    #     if button_params == '回数追加'
+    #         # occurrence_count = params.require(:occurrence_count).to_i
+    #         # @code.occurrence_count = @code.occurrence_count + occurrence_count
+    #         @code.occurrence_count += 1
+    #     end
+    # end
 
 end

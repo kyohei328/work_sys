@@ -1,0 +1,51 @@
+aside.main-sidebar.sidebar-dark-primary.elevation-4
+  a.brand-link[href="#"]
+    / # <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    span.brand-text.font-weight-light
+      | work_sys
+  .sidebar
+    .user-panel.mt-3.pb-3.mb-3.d-flex
+      .info
+        a.d-block[href="#"]
+          | UserName
+    / # <div class="form-inline">
+    nav.mt-2
+      ul.nav.nav-pills.nav-sidebar.flex-column[data-widget="treeview" role="menu" data-accordion="false"]
+        li.nav-item.menu-open
+          a.nav-link.active[href="#"]
+            i.nav-icon.fas.fa-tachometer-alt
+            p
+              |  エラー状況
+              i.right.fas.fa-angle-left
+          ul.nav.nav-treeview
+            li.nav-item
+              = link_to codes_path, class:"nav-link" do
+                i.far.fa-circle.nav-icon
+                p
+                  | エラー一覧
+            li.nav-item
+              = link_to new_code_path, class:"nav-link" do
+                i.far.fa-circle.nav-icon
+                p
+                  | エラー報告
+            li.nav-item
+              a.nav-link[href='#']
+                i.far.fa-circle.nav-icon
+                p
+                  | エラー集計
+        li.nav-item
+          a.nav-link[href='#']
+            i.nav-icon.fas.fa-tachometer-alt
+            p
+              | 工数
+        li.nav-item
+          a.nav-link[href="#"]
+            i.nav-icon.fas.fa-chart-pie
+            p
+              |  品質
+        li.nav-item
+          a.nav-link[href="#"]
+            i.nav-icon.fas.fa-table
+            p
+              |  固定費
+

@@ -1,0 +1,15 @@
+= form_with model: @code, local: true do |f|
+  .form-group
+    = f.label :code
+    = f.text_field :code, class: "form-control"
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: "form-control"
+  .form-group
+    = f.label :body
+    = f.text_area :body, rows: "5", class: "form-control"
+  / .form-group
+  /   = f.label :occurrence_count
+  /   = f.text_field :occurrence_count, class: "form-control"
+  .actions
+    = f.submit class: "btn btn-primary"

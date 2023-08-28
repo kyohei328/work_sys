@@ -1,0 +1,17 @@
+tr
+  td
+    = code.code
+  td
+    = code.title
+  td
+    = code.body
+  td
+    = code.occurrence_count
+  td
+    = l code.updated_at, format: :long
+  td
+    = form_with url: code_path(code), local: true, method: :PATCH do |f|
+      / = f.text_field :occurrence_count, placeholder: '発生回数'
+      = f.submit '回数追加', class: 'btn btn-primary btn-sm mr-1 ml-1'
+      = link_to '編集', edit_code_path(code), class: "btn btn-success btn-sm mr-1 ml-1"
+      = link_to '削除', code_path(code), method: :DELETE, data: {confirm: '削除しますか？' }, class: "btn btn-danger btn-sm mr-1 ml-1"

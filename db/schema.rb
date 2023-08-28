@@ -10,13 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_08_04_040253) do
+ActiveRecord::Schema.define(version: 2023_08_09_075304) do
+
+  create_table "accounts", force: :cascade do |t|
+    t.integer "account_code", null: false
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "codes", force: :cascade do |t|
     t.integer "code", null: false
     t.string "title", null: false
     t.text "body"
-    t.integer "occurrence_count", default: 0
+    t.integer "occurrence_count", default: 1
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "companies", force: :cascade do |t|
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -8,12 +8,10 @@ class Code < ApplicationRecord
     #     t.datetime "updated_at", null: false
     #   end
 
-    validates :code, presence: true
+    validates :code, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 0}
     validates :title, presence: true
     validates :occurrence_count, presence: true
     validates :body, length: {maximum: 65_535}
-
-
 
     # def occurrence_count_add
     #     binding.pry

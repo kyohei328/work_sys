@@ -1,4 +1,5 @@
 = form_with model: @code, local: true do |f|
+  = render 'shared/error_messages', model: f.object
   .form-group
     = f.label :code
     = f.text_field :code, class: "form-control"

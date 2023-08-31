@@ -15,7 +15,7 @@ class CodesController < ApplicationController
         # binding.pry
         @code = Code.new(code_params)
         if @code.save
-            redirect_to codes_path, scucess: 'エラー内容を保存しました。'
+            redirect_to codes_path, success: 'エラー内容を保存しました。'
         else
             flash.now[:danger] = '作成に失敗しました。'
             render :new

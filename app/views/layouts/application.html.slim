@@ -11,8 +11,10 @@ html
     link[href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"]
   body.hold-transition.sidebar-mini.layout-fixed
     .wrapper
+      
       = render 'shared/header'
       = render 'shared/sidebar'
+      = render 'shared/flash_message'
       .content-wrapper
         = yield
       = render 'shared/footer'
